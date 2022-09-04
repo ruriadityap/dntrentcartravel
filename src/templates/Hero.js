@@ -29,9 +29,9 @@ export default function Hero(props) {
               className="mb-4 font-weight-light text-gray-600 w-74"
               style={{ lineHeight: "210%" }}
             >
-              Kami menyediakan tempat yang dibutuhkan untuk menikmati liburan
-              Anda bersama keluarga. Saatnya berlibur berbahagia semuanya
-              bersama D&T Rent Car Travel
+              Kami menyediakan tempat yang dibutuhkan untuk menikmati liburan di
+              kawasan malang dan batu Anda bersama keluarga. Saatnya berlibur
+              berbahagia semuanya bersama D&T Travel
             </p>
             <Button
               className="btn px-5"
