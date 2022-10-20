@@ -1,6 +1,7 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 import { InputText } from "components/Form";
+import { NumericFormat } from "react-number-format";
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;
@@ -29,8 +30,13 @@ export default function BookingInformation(props) {
                   </div>
                   <div className="col-auto">
                     <span>
-                      {"Rp."}
-                      {+checkout.duration * ItemDetails.price}
+                      <NumericFormat
+                        value={+checkout.duration * ItemDetails.price}
+                        prefix={"Rp."}
+                        displayType="text"
+                        decimalSeparator=","
+                        thousandSeparator="."
+                      />
                       <span className="text-gray-500"> per </span>
                       {checkout.duration} {ItemDetails.unit}
                       {+checkout.duration > 1 ? "" : ""}

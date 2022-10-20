@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 import propTypes from "prop-types";
 import Button from "components/Button";
 import { InputNumber, InputDate } from "components/Form";
+import { NumericFormat } from "react-number-format";
 
 class BookingForm extends Component {
   constructor(props) {
@@ -82,7 +83,13 @@ class BookingForm extends Component {
       <div className="card bordered" style={{ padding: "60px 80px" }}>
         <h4 className="mb-3">Mulai Booking</h4>
         <h5 className="h2 text-pink mb-4">
-          Rp.{itemDetails.price}{" "}
+          <NumericFormat
+            value={itemDetails.price}
+            prefix="Rp."
+            displayType="text"
+            decimalSeparator=","
+            thousandSeparator="."
+          />{" "}
           <span className="text-gray-500 font-weight-light">
             per {itemDetails.unit}
           </span>
@@ -107,7 +114,13 @@ class BookingForm extends Component {
         >
           Kamu Harus Membayar Sebesar{" "}
           <span className="text-gray-900">
-            Rp.{itemDetails.price * data.duration}
+            <NumericFormat
+              value={itemDetails.price * data.duration}
+              prefix="Rp."
+              displayType="text"
+              decimalSeparator=","
+              thousandSeparator="."
+            />{" "}
           </span>{" "}
           per{" "}
           <span className="text-gray-900">

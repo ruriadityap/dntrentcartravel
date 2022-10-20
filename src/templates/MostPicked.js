@@ -1,6 +1,7 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 import Button from "components/Button";
+import { NumericFormat } from "react-number-format";
 
 export default function MostPicked(props) {
   return (
@@ -18,7 +19,13 @@ export default function MostPicked(props) {
                 <Fade bottom delay={500 * index}>
                   <div className="card card-featured">
                     <div className="tag">
-                      Rp.{item.price}{" "}
+                      <NumericFormat
+                        value={item.price}
+                        prefix="Rp."
+                        displayType="text"
+                        decimalSeparator=","
+                        thousandSeparator="."
+                      />{" "}
                       <span className="font-weight-light">
                         per {item.unit}{" "}
                       </span>
